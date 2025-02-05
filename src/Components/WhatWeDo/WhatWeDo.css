@@ -1,0 +1,65 @@
+.what-we-do {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f9f9f9;
+    
+  }
+  
+.what-we-do-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  width: 40%;
+  h2{
+    font-size: 46px;
+    color: #0019FF;
+  }
+  p{
+    font-size: 16px;
+    max-width: 350px;
+    
+  }
+}
+
+.cards{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card{
+  display: inline-flex;
+  padding: 24px 24px;
+  width: 439px;
+  height: 293px;
+  gap: 20px;
+  border: 3px solid #000;
+  border-radius: 30px;
+  font-size: 28px;
+  font-weight: 600;
+}
+.icon{
+  display: flex;
+  margin-top: 2px;
+  background-color: white;
+  border-radius: 90px;
+}
+
+.card1{
+  background-image: url("../../assets/instruments.jpg");
+  background-position: 'center';
+  background-size: cover;
+
+}
+
+.card2{
+  background-image: url("../../assets/interiors.jpg");
+  background-position: 'center';
+  background-size: cover;
+}

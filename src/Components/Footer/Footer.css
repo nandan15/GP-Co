@@ -1,0 +1,91 @@
+/* Footer container: side-by-side columns */
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* LEFT COLUMN (Black) */
+  .footer-left {
+    width: 50%;
+    background-color: #000; /* Black background */
+    color: #fff;
+    position: relative; /* for positioning disclaimer at bottom */
+    padding: 2rem;
+  }
+  
+  /* LOGO in red */
+  .footer-logo {
+    color: red;
+    margin: 0;
+  }
+  
+  /* "Follow us on" + Social icons */
+  .footer-follow {
+    margin-top: 2rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .social-icons span:hover{
+    color: rgb(214, 9, 9);
+  }
+  
+  /* Disclaimer text pinned at the bottom of left column */
+  .footer-disclaimer {
+    position: absolute;
+    bottom: 1rem;
+    font-size: 0.8rem;
+    color: #ccc;
+  }
+  
+  /* RIGHT COLUMN (Blue) */
+  .footer-right {
+    width: 50%;
+    background-color: #0019ff; /* Bright blue */
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .quick-links-title,
+  .get-in-touch-title {
+    margin: 0.5rem 0;
+    font-size: 22px;
+  }
+  
+  /* Quick links in a horizontal list (you can make them vertical if you prefer) */
+  .quick-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2rem;
+    font-size: 14px;
+  }
+  
+  .quick-links li {
+    cursor: pointer; /* Optional: show pointer on hover */
+  }
+  
+  /* Contact info spacing */
+  .contact-info {
+    margin: 0.2rem 0;
+
+    .contact-icon{
+        margin-right: 10px;
+    }
+  }
+  
+

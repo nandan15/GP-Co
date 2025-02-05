@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 28px;
+    background-image: url('../../assets/statsBackground.png');
+    background-position: center;
+    background-size: cover;
+    height: 30vh;
+
+}
+
+.statBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 154px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.odometerWithPlus{
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    font-family: "Roboto", serif;
+    font-weight: 600;
+    font-size: 48px;
+    color: #0019ff;
+}
+
+.plusSign{
+    margin-left: 4px;
+}

@@ -1,0 +1,236 @@
+.interiors{
+    display: flex;
+    flex-direction: column;
+}
+
+.interior-hero{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url("../../assets/interiors_hero.jpg");
+    background-position: center;
+    background-size: cover;
+
+    h1{
+        font-size: 220px;
+        letter-spacing: -9px;
+        font-weight: 250;
+        color: white;
+        margin-bottom: 79px;
+    }
+
+
+}
+
+.interior-content{
+    display: flex;
+    flex-direction: row;
+    height: 60vh;
+
+    .interior-image{
+        width: 50%;
+        height: 501px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    img{
+        position: absolute;
+        width: 500px;
+        height: 408px;
+        object-fit:cover;
+        margin-left: 75px;
+        top: -80px;
+        left: 75px;
+        z-index: 2;
+        border-radius: 5px;
+    }
+
+    .interior-text{
+        width: 50%;
+        margin-right: 20px;
+        margin-top: 20px;
+
+        h2{
+            font-size: 28px;
+            color: #0019ff;
+            margin-bottom: 15px;
+        }
+
+        p{
+            font-size: 14px;
+            max-width: 83%;
+            margin-bottom: 20px;
+        
+        }
+        
+    }
+}
+
+.interior-shades{
+    position: relative;
+    width: 100%;
+    height: 300px;
+
+    .color-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 colors per row */
+        grid-template-rows: repeat(2, 1fr); /* 2 rows */
+        width: 100%;
+        height: 300px; /* Adjust as needed */
+    
+    
+      }
+      
+      .color-box {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    
+    
+      }
+      .text-overlay {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+
+      h2{
+        font-size: 50px;
+        color: #0019ff;
+        width: 20%;
+        margin-left: 320px;
+      }
+      p{
+        max-width: 45%;
+        line-height: 28px;
+      }
+
+}
+
+
+.interior-equipment{
+
+    display: flex;
+    flex-direction: row;
+    height: 60vh;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .equipment-grid{
+        display: flex;
+        flex-direction: column;
+        max-width: 40%;
+        gap: 5px;
+        height: 40vh;
+
+        img{
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+        }
+    }
+
+    .chair{
+        display: flex;
+        height: 40vh;
+    }
+
+    .interior-eqipment-text{
+        h2{
+            color: #0019ff;
+            margin-bottom: 7px;
+        }
+        span{
+            margin-right: 3px;
+            font-weight: 700;
+            color: grey;
+        }
+        p{
+            margin-bottom: 5px;
+        }
+    }
+
+
+}
+
+
+.interior-gallery{
+    text-align: center;
+    align-items: center;
+    position: relative;
+    height: 175vh;
+
+    .gallery-header {
+        background-color: #0019ff; /* Blue header */
+        color: white;
+        padding: 2rem;
+        position: relative;
+        height: 13%;
+      }
+
+      h1 {
+        font-size: 60px;
+        margin: 0;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+      }
+
+      .grid-container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        width: 70%;
+        position: absolute;
+        max-height: 75%;
+        left: 19%;
+        top: 12%;
+      }
+
+      .grid-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .img1{
+            width: 120%;
+        }
+
+        .img3{
+            width: 85%;
+            margin-left: 15%;
+        }
+      }
+      
+      /* Images */
+      .grid-column img {
+        width: 100%; /* Make images responsive */
+        object-fit: cover;
+        border-radius: 8px; 
+        height: 50%;
+      }
+
+}
+
+
+
+  
+ 
+  
+

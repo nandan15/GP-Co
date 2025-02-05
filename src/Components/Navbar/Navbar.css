@@ -1,0 +1,45 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    box-shadow: 0 1px 3px -2px black;
+    align-items: center;
+    border-top: 20px solid blue; 
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.nav-menu li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+    color: black;
+    font-size: 18px;
+}
+.navbar a {
+    color: black;  /* Default text color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .navbar a:visited {
+    color: black; /* Prevent purple visited link */
+  }
+  
+  .navbar a:active {
+    color: black; /* Prevent color change when clicked */
+  }
+  
+  .navbar a:hover {
+    color: rgb(103, 101, 101); /* Optional: Change color on hover */
+  }
