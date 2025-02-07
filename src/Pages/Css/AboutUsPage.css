@@ -1,0 +1,112 @@
+.about-us-page{
+    display: flex;
+    flex-direction: column;
+}
+.about-us-hero{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url("../../assets/aboutus-page-background.jpg");
+    background-position: center;
+    background-size: cover;
+
+    h1{
+        font-size: 220px;
+        letter-spacing: -9px;
+        font-weight: 250;
+        color: white;
+        margin-bottom: 79px;
+    }
+
+
+}
+
+.about-us-content{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+
+    .about-us-image{
+        width: 50%;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    img{
+        position: absolute;
+        width: 100%px;
+        height: 100%;
+        object-fit:cover;
+        margin-left: 75px;
+        top: -80px;
+        left: 175px;
+        z-index: 2;
+        border-radius: 5px;
+
+    }
+
+    .about-us-text{
+        width: 50%;
+        margin-left: 150px;
+        margin-top: 20px;
+
+        p{
+            font-size: 14px;
+            max-width: 55%;
+            margin-bottom: 20px;
+            text-align: justify;
+            line-height: 24px;
+            color: rgb(71, 71, 71);
+        
+        }
+        
+    }
+}
+
+.about-us-mission{
+    display: flex;
+    flex-direction: row;
+    height: 60vh;
+    margin-bottom: 30px;
+
+    .mission-text{
+        width: 70%;
+        gap: 10px;
+        margin-left: 175px;
+
+        h2{
+            font-size: 28px;
+            color: #0019ff;
+            margin-bottom: 20px;
+        }
+
+        p{
+            font-size: 14px;
+            max-width: 90%;
+            line-height: 24px;
+            text-align: justify;
+            color: rgb(71, 71, 71);
+        }
+
+    }
+
+    .mission-image{
+        width: 50%;
+        height: 90%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 35px;
+    }
+
+    img{
+        width: 65%;
+        height:100%;
+        object-fit:cover;
+        border-radius: 5px;
+        
+    }
+}

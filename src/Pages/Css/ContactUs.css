@@ -1,0 +1,102 @@
+.contact-us{
+    display: flex;
+    flex-direction: column;
+}
+.contact-us-hero{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url("../../assets/Contact-us-hero.jpg");
+    background-position: center;
+    background-size: cover;
+
+    h1{
+        font-size: 220px;
+        letter-spacing: -9px;
+        font-weight: 250;
+        color: white;
+        margin-bottom: 79px;
+    }
+}
+
+.contact-container {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    height: 70vh;
+    margin: auto;
+    background: white;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+  }
+  
+  .contact-box {
+    background: blue;
+    padding: 20px;
+    color: white;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+  
+  .contact-details {
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .detail {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .form-box {
+    width: 60%;
+    padding: 20px;
+  }
+  
+  .form-title {
+    color: blue;
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .form-subtitle {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .input-field,
+  .textarea-field {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .textarea-field {
+    height: 80px;
+  }
+  
+  .send-button {
+    background: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .send-button:hover {
+    background: darkblue;
+  }
+  

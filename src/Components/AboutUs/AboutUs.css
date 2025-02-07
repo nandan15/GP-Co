@@ -52,3 +52,20 @@ li span{
     font-weight: 700;
 }
 
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #0019ff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .btn:hover {
+    background-color: #0051cc;
+  }
+

@@ -2,9 +2,10 @@ import React from 'react'
 import './AboutUs.css'
 import { CgArrowRightR } from "react-icons/cg";
 import aboutusphoto from '../../assets/aboutus.jpg'
+import { Link } from 'react-router-dom'
 function AboutUs() {
   return (
-    <div className="about-us">
+    <div className="about-us" id="aboutus">
         <div className="about-us-left">
           <img className="aboutus-img"src={aboutusphoto} alt="aboutus image" />
         </div>
@@ -16,6 +17,12 @@ function AboutUs() {
                 <li> <span> <CgArrowRightR /> Consumable Products :</span>  Basic and advanced technology dental equipment</li>
                 <li><span> <CgArrowRightR /> Value-Added Supplies / Services :</span> to dentists, dental laboratories, and dental colleges.</li>
             </ul>
+            <div>
+              <Link to="/aboutus" className="btn">
+                VIEW MORE {">>"}
+              </Link>
+            </div>
+
         </div>
     </div>
   )
