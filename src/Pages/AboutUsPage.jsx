@@ -1,8 +1,35 @@
 import React from 'react'
 import './Css/AboutUsPage.css'
+import{ useEffect, useState, useRef } from "react";
 import contentImage from '../assets/close-up-boy-dentist.jpg'
 import handTogether from '../assets/hands-together.jpg'
+import founderImg from '../assets/owner.jpg'
+
 function AboutUsPage() {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        },
+        { threshold: 0.3 } // Trigger when 30% of the section is visible
+      );
+  
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
+
+      return () => {
+        if (sectionRef.current) {
+          observer.unobserve(sectionRef.current);
+        }
+      };
+    }, []);
+
   return (
     <div className="about-us-page">
         <div className="about-us-hero">
@@ -38,6 +65,76 @@ function AboutUsPage() {
                 <img src={handTogether} alt="hands together" />
             </div>
         </div>
+
+        <div className="founder-container">
+      {/* Founder Section */}
+      <div ref={sectionRef} className={`founder-section ${isVisible ? "visible" : ""}`}>
+        <img
+          src={founderImg}
+          alt="Founder"
+          className="founder-image"
+        />
+        <div className="blue-bar"></div>
+        <h3 className="founder-name">GP KUMAR</h3>
+        <p className="founder-title">Founder</p>
+        <p className="founder-description">
+          Founder of GPA CoB, is actively involved in the equipment servicing field, 
+          he has vivid experience on the designing and manufacturing front that 
+          includes designing dental clinics, labs and layout plans for dental 
+          colleges. Apart, he is also founder of state-of-art factory manufacturing 
+          dental cabinets, chair side equipments and other customized requirements etc.
+        </p>
+      </div>
+
+      {/* Testimonials Section */}
+      <div className="testimonials-section">
+        <h2 className="testimonials-title">Our Testimonials</h2>
+        <div className="testimonials-container">
+          {/* Testimonial 1 */}
+          <div className="testimonial-card">
+            <div className="stars">⭐⭐⭐⭐⭐</div>
+            <p className="testimonial-text">
+              <i>
+                We are looking for best interior design with innovative idea 
+                for our hospital. Here we found Trust Dental Corporation, 
+                they reach our expectation. We suggest everyone to take service 
+                from them.
+              </i>
+            </p>
+            <h4 className="testimonial-author">Dr Devraj</h4>
+            <p className="testimonial-role">Doctor</p>
+          </div>
+
+          {/* Testimonial 2 */}
+          <div className="testimonial-card">
+            <div className="stars">⭐⭐⭐⭐</div>
+            <p className="testimonial-text">
+              <i>
+                We want built Cabinets for Dental clinic that time we found 
+                Trust Dental Corporation, there product and manufacturing 
+                quality is good.
+              </i>
+            </p>
+            <h4 className="testimonial-author">Manoj.M</h4>
+            <p className="testimonial-role">Designer</p>
+          </div>
+
+          {/* Testimonial 3 */}
+          <div className="testimonial-card">
+            <div className="stars">⭐⭐⭐⭐⭐</div>
+            <p className="testimonial-text">
+              <i>
+                I was planning to open a new dental clinic and my recommended 
+                GPAco, they helped me with all the interiors and equipment 
+                required to start a dental clinic.
+              </i>
+            </p>
+            <h4 className="testimonial-author">Prajwal.S</h4>
+            <p className="testimonial-role">Dental Doctor</p>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   )
 }

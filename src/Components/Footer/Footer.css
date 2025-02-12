@@ -73,6 +73,24 @@
     padding: 0;
     margin-bottom: 2rem;
     font-size: 14px;
+    color: #fff;
+  }
+
+  .footer-right a {
+    color: #fff;  /* Default text color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .footer-right a:visited {
+    color: #fff; /* Prevent purple visited link */
+  }
+  
+  .footer-right a:active {
+    color: #fff; /* Prevent color change when clicked */
+  }
+  
+  .footer-right a:hover {
+    color: rgb(174, 173, 173); /* Optional: Change color on hover */
   }
   
   .quick-links li {

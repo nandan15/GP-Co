@@ -1,0 +1,55 @@
+.products{
+    display: flex;
+    flex-direction: column;
+}
+.products-hero{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url("../../assets/instruments.jpg");
+    background-position: center;
+    background-size: cover;
+
+    h1{
+        font-size: 220px;
+        letter-spacing: -9px;
+        font-weight: 250;
+        color: white;
+        margin-bottom: 79px;
+    }
+
+
+}
+
+.products-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: #0019ff;
+
+    h2{
+        color: aliceblue;
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+  

@@ -18,7 +18,7 @@ function Navbar() {
           {location.pathname!=='/' && (<li><Link to='/'>Home</Link></li>
           )}
             <li> <HashLink smooth to="/#aboutus" className="navbar-link" style={{textDecoration:'none'}}>About Us</HashLink></li>
-            <li>Products</li>
+            <li><Link to="/products" className="navbar-link" style={{textDecoration:'none'}}>Products</Link></li>
             <li><Link to="/interiors" className="navbar-link" style={{textDecoration:'none'}}>Interiors</Link></li>
             <li><Link to="/contact" className="navbar-link" style={{textDecoration:'none'}}>Contact Us</Link></li>
         </ul>

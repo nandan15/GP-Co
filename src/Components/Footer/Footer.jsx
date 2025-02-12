@@ -7,7 +7,11 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
+import { Link ,useLocation} from 'react-router';
+import { HashLink } from 'react-router-hash-link';
 function Footer() {
+
+  const location =useLocation();
   return (
     <div className="footer-container">
       {/* Left Side (Black) */}
@@ -39,11 +43,12 @@ function Footer() {
       <div className="footer-right">
         <h3 className="quick-links-title">Quick Links</h3>
         <ul className="quick-links">
-          <li>HOME</li>
-          <li>ABOUT US</li>
-          <li>PRODUCT</li>
-          <li>INTERIORS</li>
-          <li>CONTACT US</li>
+        {location.pathname!=='/' && (<li><Link to='/'>Home</Link></li>
+          )}
+            <li> <HashLink smooth to="/#aboutus" className="navbar-link" style={{textDecoration:'none'}}>About Us</HashLink></li>
+            <li><Link to="/products" className="navbar-link" style={{textDecoration:'none'}}>Products</Link></li>
+            <li><Link to="/interiors" className="navbar-link" style={{textDecoration:'none'}}>Interiors</Link></li>
+            <li><Link to="/contact" className="navbar-link" style={{textDecoration:'none'}}>Contact Us</Link></li>
         </ul>
 
         <h3 className="get-in-touch-title">Get in Touch</h3>
