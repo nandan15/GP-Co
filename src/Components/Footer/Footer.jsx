@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Footer.css"
+import logo from "../../assets/logo.png"
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
@@ -17,7 +18,7 @@ function Footer() {
       {/* Left Side (Black) */}
       <div className="footer-left">
         {/* Logo in red */}
-        <h1 className="footer-logo">LOGO</h1>
+        <img src={logo} alt="Logo" className="footer-logo" />
 
         {/* "Follow us on" and social icons */}
         <div className="footer-follow">
@@ -41,15 +42,6 @@ function Footer() {
 
       {/* Right Side (Blue) */}
       <div className="footer-right">
-        <h3 className="quick-links-title">Quick Links</h3>
-        <ul className="quick-links">
-        {location.pathname!=='/' && (<li><Link to='/'>Home</Link></li>
-          )}
-            <li> <HashLink smooth to="/#aboutus" className="navbar-link" style={{textDecoration:'none'}}>About Us</HashLink></li>
-            <li><Link to="/products" className="navbar-link" style={{textDecoration:'none'}}>Products</Link></li>
-            <li><Link to="/interiors" className="navbar-link" style={{textDecoration:'none'}}>Interiors</Link></li>
-            <li><Link to="/contact" className="navbar-link" style={{textDecoration:'none'}}>Contact Us</Link></li>
-        </ul>
 
         <h3 className="get-in-touch-title">Get in Touch</h3>
         <p className="contact-info"><span className="contact-icon"><FaPhoneAlt /></span>  +91 8880 222 111</p>

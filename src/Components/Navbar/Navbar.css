@@ -1,45 +1,163 @@
-.navbar{
+.navbar {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    padding: 15px 20px;
+    transition: all 0.3s ease-in-out;
     display: flex;
-    justify-content: space-around;
-    padding: 16px;
-    box-shadow: 0 1px 3px -2px black;
     align-items: center;
-    border-top: 20px solid blue; 
+    justify-content: space-between; /* Space between burger and links on larger screens */
+    width: auto; /* Adjust width as needed */
 }
 
-.nav-menu{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 50px;
-    color: #000;
-    font-size: 20px;
-    font-weight: 500;
+.navbar.mobile-open {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    flex-direction: column; /* Stack items vertically in mobile */
+    justify-content: flex-start; /* Align items to the top */
+    padding-top: 60px; /* add padding to the top */
 }
 
-.nav-menu li{
+.nav-menu {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3px;
+    list-style: none;
+    gap: 30px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
     cursor: pointer;
     color: black;
-    font-size: 18px;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
 }
+
+.nav-menu li:hover {
+    color: rgb(103, 101, 101);
+}
+
 .navbar a {
-    color: black;  /* Default text color */
-    text-decoration: none; /* Remove underline */
-  }
-  
-  .navbar a:visited {
-    color: black; /* Prevent purple visited link */
-  }
-  
-  .navbar a:active {
-    color: black; /* Prevent color change when clicked */
-  }
-  
-  .navbar a:hover {
-    color: rgb(103, 101, 101); /* Optional: Change color on hover */
-  }
+    color: black;
+    text-decoration: none;
+}
+
+.navbar a:visited {
+    color: black;
+}
+
+.navbar a:active {
+    color: black;
+}
+
+.navbar a:hover {
+    color: rgb(103, 101, 101);
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 101; /* Ensure it's on top */
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: 0.3s ease;
+}
+
+/* Media Queries for Mobile Dropdown */
+@media (max-width: 768px) {
+    .navbar {
+        top: 10px;
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Just horizontal centering */
+        width: 90%; /* Nearly full width */
+        padding: 10px;
+        justify-content: flex-end; /* Align burger to the right */
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        width: 100%;
+        background-color: rgba(252, 252, 252, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        text-align: center;
+        border-radius: 0;
+        align-items: center; /* Center-align items vertically */
+    }
+
+    .nav-menu.active {
+        display: flex;
+        position: relative;
+        top: 0;
+    }
+
+    .nav-menu li {
+        font-size: 20px;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+    .navbar.mobile-open .burger-menu{
+        position: fixed;
+        top: 40px;
+        right: 40px;
+        z-index: 101; /* Ensure it's on top */
+    }
+    .navbar.mobile-open {
+        background-color: rgba(255, 255, 255, 0.9);
+        align-items: center;
+        justify-content: flex-start; /* Align items to the top */
+        padding-top: 60px; /* add padding to the top */
+
+    }
+
+    .navbar.mobile-open .nav-menu {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        width: auto;
+    }
+    .navbar.mobile-open .nav-menu li{
+        font-size: 25px;
+    }
+}
+
+/* Burger Animation */
+.burger-menu.active .burger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .burger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}

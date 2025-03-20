@@ -86,12 +86,12 @@ function Interiors() {
             <p>A sneak peak into our recent projects and ongoing projects.</p>
           </div>
 
-          <div className="grid-container">
-              <div className="grid-column">
+          <div className="grid-container-interior">
+              <div className="grid-column-interior">
                 <img className='img1' src={interiorImg01} alt="interior 1" />
                 <img className='img2' src={interiorImg02} alt="interior 2" />
               </div>
-              <div className="grid-column">
+              <div className="grid-column-interior">
                 <img className='img3' src={interiorImg03} alt="interior 3" />
                 <img className='img4' src={interiorImg04} alt="interior 4" />
           </div>

@@ -1,65 +1,210 @@
 .what-we-do {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Changed to column for better mobile layout */
+    align-items: center; /* Center items horizontally */
     text-align: center;
     padding: 3rem 1rem;
-    background-color: #f9f9f9;
-    
-  }
-  
-.what-we-do-info{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: justify;
-  width: 40%;
-  h2{
-    font-size: 46px;
-    color: #0019FF;
-  }
-  p{
-    font-size: 16px;
-    max-width: 350px;
-    
-  }
+    background-color: #f8f8f8; /* Light gray background */
+    overflow: hidden; /* Hide overflowing animations */
+    position: relative; /* For absolute positioning of shapes */
 }
 
-.cards{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+.what-we-do-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center text */
+    width: 100%; /* Full width on mobile */
+    max-width: 800px; /* Limit width on larger screens */
+    margin-bottom: 3rem; /* Space before cards */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 
-.card{
-  display: inline-flex;
-  padding: 24px 24px;
-  width: 439px;
-  height: 293px;
-  gap: 20px;
-  border: 3px solid #000;
-  border-radius: 30px;
-  font-size: 28px;
-  font-weight: 600;
-}
-.icon{
-  display: flex;
-  margin-top: 2px;
-  background-color: white;
-  border-radius: 90px;
+.what-we-do-info h2 {
+    font-size: 3rem; /* Reduced font size */
+    color: #124e66;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add text shadow */
 }
 
-.card1{
-  background-image: url("../../assets/instruments.jpg");
-  background-position: 'center';
-  background-size: cover;
-
+.what-we-do-info p {
+    font-size: 1rem;
+    max-width: 600px; /* Increased max-width */
+    line-height: 1.6; /* Improved readability */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out 0.7s forwards;
 }
 
-.card2{
-  background-image: url("../../assets/interiors.jpg");
-  background-position: 'center';
-  background-size: cover;
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Wrap cards on smaller screens */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Limit width */
+}
+
+.card {
+    display: flex;
+    flex-direction: column; /* Stack icon and text */
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    width: 300px; /* Reduced width */
+    height: 250px; /* Reduced height */
+    gap: 10px; /* Reduced gap */
+    border: 3px solid #212a31;
+    border-radius: 30px;
+    font-size: 1.2rem; /* Reduced font size */
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    opacity: 0;
+    transform: translateY(20px);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Move up on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* Fixed width */
+    height: 60px; /* Fixed height */
+    background-color: #353635;
+    border-radius: 50%; /* Circle */
+    margin-bottom: 10px; /* Space between icon and text */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.card1 {
+    background-image: url("../../assets/instruments.jpg");
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
+    animation: fadeInUp 1s ease-out 0.9s forwards;
+}
+
+.card2 {
+    background-image: url("../../assets/interiors.jpg");
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
+    animation: fadeInUp 1s ease-out 1.1s forwards;
+}
+
+.card1 .icon,
+.card2 .icon {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+}
+
+.card1:hover .icon,
+.card2:hover .icon {
+    background-color: rgba(27, 27, 27, 0.8); /* More opaque on hover */
+}
+/* Geometric Shapes */
+.what-we-do::before,
+.what-we-do::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(18, 78, 102, 0.1); /* Semi-transparent blue */
+    opacity: 0;
+}
+
+.what-we-do::before {
+    top: -50px;
+    left: -100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Circle */
+    animation: pulse 8s linear infinite, appear 1s ease-out 1s forwards;
+}
+
+.what-we-do::after {
+    bottom: -50px;
+    right: -100px;
+    width: 150px;
+    height: 150px;
+    border-radius: 20px; /* Rounded square */
+    transform: rotate(45deg); /* Rotate for diamond */
+    animation: pulse 6s linear infinite 0.5s, appear 1s ease-out 1.5s forwards;
+}
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Media Queries */
+@media (max-width: 1024px) {
+    .what-we-do-info h2 {
+        font-size: 2.5rem;
+    }
+
+    .what-we-do-info p {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        width: 250px;
+        height: 200px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .what-we-do {
+        padding: 2rem 0.5rem;
+    }
+
+    .what-we-do-info {
+        margin-bottom: 2rem;
+    }
+
+    .what-we-do-info h2 {
+        font-size: 2rem;
+    }
+
+    .what-we-do-info p {
+        font-size: 0.8rem;
+    }
+
+    .cards {
+        flex-direction: column; /* Stack cards vertically */
+    }
+
+    .card {
+        width: 90%; /* Full width */
+        max-width: 350px;
+        height: auto; /* Adjust height automatically */
+        padding: 1rem;
+    }
 }

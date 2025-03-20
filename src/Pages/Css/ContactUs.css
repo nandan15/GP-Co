@@ -35,7 +35,7 @@
   }
   
   .contact-box {
-    background: blue;
+    background: #124e66;
     padding: 20px;
     color: white;
     width: 40%;
@@ -61,7 +61,7 @@
   }
   
   .form-title {
-    color: blue;
+    color: #124e66;
     font-size: 36px;
     margin-bottom: 10px;
   }
@@ -77,7 +77,7 @@
     width: 90%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #124e66;
     border-radius: 5px;
     position: relative;
   }
@@ -87,7 +87,7 @@
   }
   
   .send-button {
-    background: blue;
+    background: #124e66;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -99,4 +99,85 @@
   .send-button:hover {
     background: darkblue;
   }
+
+  @media (max-width: 1200px) {
+    .contact-container {
+        max-width: 960px; /* Adjust max-width */
+    }
+    .contact-us-hero h1 {
+        font-size: 180px;
+        letter-spacing: -7px;
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-container {
+        max-width: 768px; /* Adjust max-width */
+    }
+    .contact-us-hero h1 {
+        font-size: 150px;
+        letter-spacing: -5px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stack vertically */
+        margin: 5vh auto; /* Adjust margin */
+        height: auto; /* Adjust height */
+    }
+
+    .contact-box {
+        width: 100%; /* Full width */
+        padding: 15px; /* Reduced padding */
+        gap: 10px;
+    }
+
+    .form-box {
+        width: 100%; /* Full width */
+        padding: 15px; /* Reduced padding */
+    }
+
+    .contact-us-hero h1 {
+        font-size: 90px;
+        letter-spacing: -3px;
+        margin-bottom: 30px;
+    }
+
+    .form-title {
+        font-size: 30px;
+    }
+
+    .input-field,
+    .textarea-field {
+        width: 95%;
+    }
+    .detail{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-us-hero h1 {
+        font-size: 70px;
+        letter-spacing: -2px;
+        margin-bottom: 20px;
+    }
+    .form-title {
+        font-size: 24px;
+    }
+    .form-subtitle {
+        font-size: 12px;
+    }
+    .input-field,
+    .textarea-field {
+        width: 95%;
+        font-size: 14px;
+    }
+    .send-button{
+        font-size: 14px;
+    }
+}
   

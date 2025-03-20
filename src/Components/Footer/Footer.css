@@ -4,106 +4,177 @@
     flex-direction: row;
     width: 100%;
     margin: 0;
-    padding: 0;
-  }
-  
-  /* LEFT COLUMN (Black) */
-  .footer-left {
-    width: 50%;
-    background-color: #000; /* Black background */
+
+    background-color: #124e66; /* Dark gray background */
     color: #fff;
-    position: relative; /* for positioning disclaimer at bottom */
-    padding: 2rem;
-  }
-  
-  /* LOGO in red */
-  .footer-logo {
-    color: red;
-    margin: 0;
-  }
-  
-  /* "Follow us on" + Social icons */
-  .footer-follow {
-    margin-top: 2rem;
-  }
-  
-  .social-icons {
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow columns to wrap */
+    gap: 20px; /* Add gap between columns */
+}
+
+/* LEFT COLUMN (Black) */
+.footer-left {
+    width: 40%; /* Adjusted width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    min-width: 300px; /* Minimum width */
+    background-color: #2e3944;
+}
+
+.footer-logo {
+    width: 30%;
+    height: 30%;
+    margin: 0 auto;
+
+}
+
+/* "Follow us on" + Social icons */
+.footer-follow {
+  text-align: center;
+}
+
+.social-icons {
     display: flex;
     gap: 1rem;
     margin-top: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Increased font size */
     cursor: pointer;
-  }
+}
 
-  .social-icons span:hover{
-    color: rgb(214, 9, 9);
-  }
-  
-  /* Disclaimer text pinned at the bottom of left column */
-  .footer-disclaimer {
-    position: absolute;
-    bottom: 1rem;
+.social-icons span:hover {
+    color: #0019ff; /* Changed to blue */
+}
+
+/* Disclaimer text pinned at the bottom of left column */
+.footer-disclaimer {
     font-size: 0.8rem;
     color: #ccc;
-  }
-  
-  /* RIGHT COLUMN (Blue) */
-  .footer-right {
-    width: 50%;
-    background-color: #0019ff; /* Bright blue */
-    color: #fff;
-    padding: 2rem;
+    margin-top: 1rem; 
+    text-align: center;/* Add margin to the top */
+}
+
+/* RIGHT COLUMN (Blue) */
+.footer-right {
+    width: 45%; /* Adjusted width */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-  }
-  
-  .quick-links-title,
-  .get-in-touch-title {
+    padding: 1rem;
+    min-width: 300px; /* Minimum width */
+}
+
+.quick-links-title,
+.get-in-touch-title {
     margin: 0.5rem 0;
-    font-size: 22px;
-  }
-  
-  /* Quick links in a horizontal list (you can make them vertical if you prefer) */
-  .quick-links {
+    font-size: 1.5rem; /* Reduced font size */
+    font-weight: bold;
+}
+
+/* Quick links in a horizontal list (you can make them vertical if you prefer) */
+.quick-links {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    flex-direction: column; /* Changed to column */
+    gap: 0.5rem; /* Reduced gap */
     margin: 0;
     padding: 0;
-    margin-bottom: 2rem;
-    font-size: 14px;
+    margin-bottom: 1rem; /* Reduced margin */
+    font-size: 1rem; /* Reduced font size */
     color: #fff;
-  }
+}
 
-  .footer-right a {
-    color: #fff;  /* Default text color */
-    text-decoration: none; /* Remove underline */
-  }
-  
-  .footer-right a:visited {
-    color: #fff; /* Prevent purple visited link */
-  }
-  
-  .footer-right a:active {
-    color: #fff; /* Prevent color change when clicked */
-  }
-  
-  .footer-right a:hover {
-    color: rgb(174, 173, 173); /* Optional: Change color on hover */
-  }
-  
-  .quick-links li {
-    cursor: pointer; /* Optional: show pointer on hover */
-  }
-  
-  /* Contact info spacing */
-  .contact-info {
-    margin: 0.2rem 0;
+.footer-right a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Add transition */
+}
 
-    .contact-icon{
-        margin-right: 10px;
+.footer-right a:visited {
+    color: #fff;
+}
+
+.footer-right a:active {
+    color: #fff;
+}
+
+.footer-right a:hover {
+    color: #0019ff; /* Changed to blue */
+}
+
+.quick-links li {
+    cursor: pointer;
+}
+
+/* Contact info spacing */
+.contact-info {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    margin-right: 10px;
+    font-size: 1.2rem; /* Increased font size */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack columns vertically */
     }
-  }
-  
 
+    .footer-left,
+    .footer-right {
+        width: 100%; /* Full width on mobile */
+        min-width: auto; /* Remove min-width */
+    }
+
+    .footer-logo {
+        font-size: 1.8rem;
+    }
+
+    .social-icons {
+        font-size: 1.3rem;
+    }
+
+    .quick-links-title,
+    .get-in-touch-title {
+        font-size: 1.3rem;
+    }
+
+    .quick-links {
+        font-size: 0.9rem;
+    }
+
+    .contact-icon {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+
+    .social-icons {
+        font-size: 1.1rem;
+    }
+
+    .quick-links-title,
+    .get-in-touch-title {
+        font-size: 1.1rem;
+    }
+
+    .quick-links {
+        font-size: 0.8rem;
+    }
+
+    .contact-icon {
+        font-size: 0.9rem;
+    }
+}

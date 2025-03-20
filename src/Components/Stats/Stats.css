@@ -3,15 +3,17 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    max-width: 100%;
     padding: 28px;
     background-image: url('../../assets/statsBackground.png');
     background-position: center;
     background-size: cover;
     height: 30vh;
-
+    gap: 20px; /* Add gap between stat boxes */
+    flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
 }
 
-.statBox{
+.statBox {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,20 +21,100 @@
     text-align: center;
     height: 154px;
     width: 300px;
-    border: 2px solid black;
+    border: 2px solid #2E3944;
     border-radius: 20px;
+    flex-grow: 1; /* Allow boxes to grow to fill space */
+    flex-basis: 250px; /* Initial width before wrapping */
+    min-width: 250px;
+    padding: 10px;
 }
 
-.odometerWithPlus{
+.odometerWithPlus {
     display: inline-flex;
     align-items: baseline;
     justify-content: center;
     font-family: "Roboto", serif;
     font-weight: 600;
     font-size: 48px;
-    color: #0019ff;
+    color: #124e66;
 }
 
-.plusSign{
+.plusSign {
     margin-left: 4px;
+}
+
+/* Media Queries */
+
+/* For medium screens (e.g., tablets) */
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 20px;
+        height: auto; /* Adjust height automatically */
+        justify-content: center; /* Center boxes */
+    }
+
+    .statBox {
+        width: 200px;
+        height: 120px;
+        flex-basis: 200px;
+        min-width: 200px;
+    }
+
+    .odometerWithPlus {
+        font-size: 36px;
+    }
+}
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px;
+        height: auto; /* Adjust height automatically */
+        justify-content: center; /* Center boxes */
+    }
+
+    .statBox {
+        width: 200px;
+        height: 120px;
+        flex-basis: 200px;
+        min-width: 200px;
+    }
+
+    .odometerWithPlus {
+        font-size: 36px;
+    }
+}
+
+/* For small screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack boxes vertically */
+        padding: 15px;
+    }
+
+    .statBox {
+        width: 90%; /* Take up most of the screen width */
+        max-width: 300px; /* avoid the box to be too wide */
+        height: 100px;
+        flex-basis: auto;
+        min-width: auto;
+    }
+
+    .odometerWithPlus {
+        font-size: 30px;
+    }
+}
+
+/* For very small screens (e.g., smaller mobile devices) */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .statBox {
+        width: 95%;
+    }
+
+    .odometerWithPlus {
+        font-size: 24px;
+    }
 }
