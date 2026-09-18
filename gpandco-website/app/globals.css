@@ -1,0 +1,393 @@
+@import "tailwindcss";
+
+/* ============================================================
+   GP & Co. — Global CSS (Tailwind v4 compatible)
+   ============================================================ */
+
+/* ── Tailwind v4 Theme Tokens ────────────────────────────── */
+@theme {
+  /* Colors — Navy */
+  --color-navy-50: #EEF2F9;
+  --color-navy-100: #D5E0F1;
+  --color-navy-200: #AABDE3;
+  --color-navy-300: #7F9AD5;
+  --color-navy-400: #5577C7;
+  --color-navy-500: #2A54B9;
+  --color-navy-600: #1E3D8A;
+  --color-navy-700: #15295C;
+  --color-navy-800: #0D1A3D;
+  --color-navy-900: #0B1B3A;
+  --color-navy-950: #070F20;
+
+  /* Colors — Accent */
+  --color-accent: #1E5AA8;
+  --color-accent-light: #2E72CC;
+  --color-accent-dark: #154080;
+
+  /* Colors — Silver */
+  --color-silver: #B8C4D0;
+  --color-silver-light: #D8E2EA;
+  --color-silver-dark: #8898A8;
+
+  /* Colors — Surface */
+  --color-surface: #F8F9FB;
+  --color-surface-secondary: #F0F3F7;
+  --color-surface-tertiary: #E8ECF2;
+
+  /* Font families */
+  --font-family-heading: var(--font-manrope), system-ui, sans-serif;
+  --font-family-body: var(--font-inter), system-ui, sans-serif;
+  --font-family-sans: var(--font-inter), system-ui, sans-serif;
+
+  /* Font sizes — Display */
+  --font-size-display-2xl: 4.5rem;
+  --line-height-display-2xl: 1.1;
+  --letter-spacing-display-2xl: -0.04em;
+
+  --font-size-display-xl: 3.75rem;
+  --line-height-display-xl: 1.1;
+  --letter-spacing-display-xl: -0.03em;
+
+  --font-size-display-lg: 3rem;
+  --line-height-display-lg: 1.15;
+  --letter-spacing-display-lg: -0.025em;
+
+  --font-size-display-md: 2.25rem;
+  --line-height-display-md: 1.2;
+  --letter-spacing-display-md: -0.02em;
+
+  --font-size-display-sm: 1.875rem;
+  --line-height-display-sm: 1.25;
+  --letter-spacing-display-sm: -0.015em;
+
+  /* Font sizes — Body */
+  --font-size-body-xl: 1.25rem;
+  --line-height-body-xl: 1.7;
+
+  --font-size-body-lg: 1.125rem;
+  --line-height-body-lg: 1.7;
+
+  --font-size-body-md: 1rem;
+  --line-height-body-md: 1.7;
+
+  --font-size-body-sm: 0.875rem;
+  --line-height-body-sm: 1.6;
+
+  /* Font sizes — Label */
+  --font-size-label-lg: 0.875rem;
+  --line-height-label-lg: 1.2;
+  --letter-spacing-label-lg: 0.12em;
+
+  --font-size-label-md: 0.75rem;
+  --line-height-label-md: 1.2;
+  --letter-spacing-label-md: 0.12em;
+
+  /* Border radius */
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px 0 rgba(0,0,0,0.04), 0 4px 16px 0 rgba(0,0,0,0.06);
+  --shadow-card-hover: 0 4px 24px 0 rgba(0,0,0,0.1), 0 1px 4px 0 rgba(0,0,0,0.04);
+  --shadow-nav: 0 1px 0 0 rgba(0,0,0,0.06), 0 4px 24px 0 rgba(0,0,0,0.06);
+  --shadow-glow: 0 0 40px 0 rgba(30, 90, 168, 0.15);
+
+  /* Spacing */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+  --spacing-section: 6rem;
+  --spacing-section-sm: 3rem;
+
+  /* Animations */
+  --animate-fade-up: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-shimmer: shimmer 2s linear infinite;
+
+  /* Keyframes */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px 0 rgba(30, 90, 168, 0.2); }
+    50% { box-shadow: 0 0 40px 8px rgba(30, 90, 168, 0.35); }
+  }
+
+  /* Background images */
+  --background-image-gradient-navy: linear-gradient(135deg, #0B1B3A 0%, #0D1A3D 100%);
+  --background-image-gradient-hero: linear-gradient(160deg, #070F20 0%, #0B1B3A 50%, #0D2B5C 100%);
+  --background-image-gradient-section: linear-gradient(180deg, #F8F9FB 0%, #F0F3F7 100%);
+  --background-image-gradient-accent: linear-gradient(135deg, #1E5AA8 0%, #2E72CC 100%);
+}
+
+/* ── Base Reset & Smoothing ─────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-navy-900);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── Base Layer & Typography Reset ──────────────────────── */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: inherit;
+  }
+}
+
+/* ── Custom Utilities (Tailwind v4 @utility) ─────────────── */
+
+/* Container */
+@utility container-wide {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@utility container-standard {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@utility container-narrow {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Section padding */
+@utility py-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@utility py-section-sm {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Text gradient utilities */
+@utility text-gradient {
+  background: linear-gradient(135deg, #1E5AA8 0%, #2E72CC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@utility text-gradient-white {
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.85) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@utility text-gradient-cyan {
+  background: linear-gradient(135deg, #93C5FD 0%, #38BDF8 50%, #67E8F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Font family utilities */
+@utility font-heading {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+@utility font-body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Glass card utilities */
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+@utility glass-card-dark {
+  background: rgba(7, 15, 32, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Divider utilities */
+@utility divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #E2E8F0, transparent);
+}
+
+@utility divider-light {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+}
+
+/* Noise overlay utility */
+@utility noise-overlay {
+  position: relative;
+}
+
+/* Horizontal scroll */
+@utility scroll-x {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Font sizes as utilities */
+@utility text-display-2xl {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+@utility text-display-xl {
+  font-size: 3.75rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+@utility text-display-lg {
+  font-size: 3rem;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+@utility text-display-md {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+@utility text-display-sm {
+  font-size: 1.875rem;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+@utility text-body-xl {
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+@utility text-body-lg {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+@utility text-body-md {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+@utility text-body-sm {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+@utility text-label-lg {
+  font-size: 0.875rem;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+}
+@utility text-label-md {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+}
+
+/* Shadow utilities */
+@utility shadow-card {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.04), 0 4px 16px 0 rgba(0,0,0,0.06);
+}
+@utility shadow-card-hover {
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.1), 0 1px 4px 0 rgba(0,0,0,0.04);
+}
+@utility shadow-nav {
+  box-shadow: 0 1px 0 0 rgba(0,0,0,0.06), 0 4px 24px 0 rgba(0,0,0,0.06);
+}
+@utility shadow-glow {
+  box-shadow: 0 0 40px 0 rgba(30, 90, 168, 0.15);
+}
+
+/* ── Custom Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-silver);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-navy-700);
+}
+.scroll-x::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Focus Styles (Accessibility) ───────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Selection ──────────────────────────────────────────── */
+::selection {
+  background-color: rgba(30, 90, 168, 0.15);
+  color: var(--color-navy-900);
+}
+
+/* ── Noise Overlay ──────────────────────────────────────── */
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Reduced Motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ── Image utilities ────────────────────────────────────── */
+img {
+  display: block;
+  max-width: 100%;
+}
