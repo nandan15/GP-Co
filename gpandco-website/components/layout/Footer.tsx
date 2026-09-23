@@ -107,23 +107,25 @@ export function Footer() {
 
             {/* Contact */}
             <div className="mt-8 space-y-3">
-              {company.phone !== "[PHONE NUMBER]" ? (
-                <a
-                  href={`tel:${company.phone}`}
-                  className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-body-sm group"
-                  aria-label={`Phone: ${company.phoneDisplay}`}
-                >
-                  <Phone size={15} className="text-white/30 group-hover:text-accent-light transition-colors flex-shrink-0" />
-                  {company.phoneDisplay}
-                </a>
-              ) : (
-                <div className="flex items-center gap-3 text-white/30 text-body-sm">
-                  <Phone size={15} className="flex-shrink-0" />
-                  <span className="italic">[PHONE NUMBER]</span>
-                </div>
-              )}
+              <a
+                href={`tel:${company.mobile}`}
+                className="flex items-center gap-3 text-white/85 hover:text-white transition-colors text-body-sm group font-medium"
+                aria-label={`Mobile: ${company.mobileDisplay}`}
+              >
+                <Phone size={15} className="text-white/40 group-hover:text-accent-light transition-colors flex-shrink-0" />
+                {company.mobileDisplay}
+              </a>
 
-              {company.email !== "[EMAIL ADDRESS]" ? (
+              <a
+                href={`tel:${company.phone}`}
+                className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-body-sm group"
+                aria-label={`Landline: ${company.phoneDisplay}`}
+              >
+                <Phone size={15} className="text-white/30 group-hover:text-accent-light transition-colors flex-shrink-0" />
+                {company.phoneDisplay} (Landline)
+              </a>
+
+              {(company.email as string) !== "[EMAIL ADDRESS]" ? (
                 <a
                   href={`mailto:${company.email}`}
                   className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-body-sm group"

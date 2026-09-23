@@ -29,43 +29,6 @@ const values = [
   { title: "Customer Focus", description: "Understanding and responding to the specific requirements of each dental professional." },
 ];
 
-const timeline = [
-  {
-    year: "2002",
-    title: "GP & Co. Founded",
-    description: "GP & Co. begins its journey serving the dental industry in Karnataka.",
-  },
-  {
-    year: "[Year]",
-    title: "Growth in Equipment Solutions",
-    description: "Expanding dental equipment supply to serve a growing number of clinics and professionals. [Milestone details to be added]",
-    placeholder: true,
-  },
-  {
-    year: "[Year]",
-    title: "Complete Clinic Setup",
-    description: "Evolution into comprehensive clinic setup services, coordinating equipment and interior requirements. [Milestone details to be added]",
-    placeholder: true,
-  },
-  {
-    year: "[Year]",
-    title: "Interior & Planning Capabilities",
-    description: "Development of clinic interior planning and design capabilities. [Milestone details to be added]",
-    placeholder: true,
-  },
-  {
-    year: "[Year]",
-    title: "Expanded Service & Support",
-    description: "Building a dedicated service and maintenance capability for long-term customer support. [Milestone details to be added]",
-    placeholder: true,
-  },
-  {
-    year: "2026",
-    title: "Present",
-    description: "Continuing to serve dental professionals across Karnataka with complete dental solutions.",
-  },
-];
-
 export default function AboutPage() {
   return (
     <>
@@ -139,65 +102,6 @@ export default function AboutPage() {
                 ))}
               </div>
             </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Timeline ────────────────────────────────────────── */}
-      <section
-        className="py-section bg-surface-secondary"
-        aria-labelledby="timeline-heading"
-      >
-        <div className="container-wide">
-          <SectionHeading
-            label="Our Journey"
-            title="Over Two Decades of"
-            titleHighlight="Dental Industry Experience."
-            align="center"
-            className="mb-20"
-          />
-
-          <div className="relative max-w-3xl mx-auto">
-            {/* Vertical line */}
-            <div
-              className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px -translate-x-px bg-gradient-to-b from-transparent via-navy-200 to-transparent"
-              aria-hidden="true"
-            />
-
-            <div className="space-y-12">
-              {timeline.map((item, i) => {
-                const isLeft = i % 2 === 0;
-                return (
-                  <AnimatedSection key={i} delay={i * 0.05} className="relative">
-                    <div className={`flex items-start gap-8 md:gap-0 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                      {/* Content */}
-                      <div className={`flex-1 pb-0 pl-16 md:pl-0 ${isLeft ? "md:pr-12 md:text-right" : "md:pl-12 md:text-left"}`}>
-                        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full mb-3 ${item.placeholder ? "bg-surface-tertiary border border-surface-tertiary" : "bg-navy-900 text-white"}`}>
-                          <span className={`text-label-md font-bold ${item.placeholder ? "text-navy-700/40 italic" : "text-white"}`}>
-                            {item.year}
-                          </span>
-                        </div>
-                        <h3 className={`font-heading font-bold text-navy-900 text-body-xl mb-2 ${item.placeholder ? "text-navy-900/50" : ""}`}>
-                          {item.title}
-                        </h3>
-                        <p className={`text-body-sm leading-relaxed max-w-xs ${isLeft ? "md:ml-auto" : ""} ${item.placeholder ? "text-navy-700/35 italic" : "text-navy-700/65"}`}>
-                          {item.description}
-                        </p>
-                      </div>
-
-                      {/* Center dot */}
-                      <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-white shadow-card flex-shrink-0 z-10 top-1.5"
-                        style={{ background: item.placeholder ? "#CBD5E1" : "#0B1B3A" }}
-                        aria-hidden="true"
-                      />
-
-                      {/* Spacer for opposite side */}
-                      <div className="hidden md:block flex-1" aria-hidden="true" />
-                    </div>
-                  </AnimatedSection>
-                );
-              })}
-            </div>
           </div>
         </div>
       </section>

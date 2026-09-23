@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative h-screen min-h-[700px] max-h-[1000px] flex items-center justify-center overflow-hidden bg-navy-950"
+      className="relative min-h-screen py-24 md:py-32 flex items-center justify-center overflow-hidden bg-navy-950"
       aria-label="Hero section"
     >
       {/* Parallax Background Image */}
@@ -65,7 +65,7 @@ export function Hero() {
       {/* Content */}
       <motion.div
         style={{ y: textY, opacity }}
-        className="relative z-10 container-wide w-full"
+        className="relative z-10 container-wide w-full pt-16 md:pt-24"
       >
         <div className="max-w-3xl">
           {/* Label Badge */}
@@ -73,11 +73,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex items-center gap-3 mb-8"
+            className="flex items-center gap-3 mb-6 sm:mb-8"
           >
-            <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-cyan-400/35 bg-navy-900/70 backdrop-blur-md shadow-[0_0_15px_rgba(56,189,248,0.15)]">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" aria-hidden="true" />
-              <span className="text-label-md text-cyan-200 font-semibold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-400/35 bg-navy-900/80 backdrop-blur-md shadow-[0_0_15px_rgba(56,189,248,0.15)] max-w-full">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse flex-shrink-0" aria-hidden="true" />
+              <span className="text-[11px] sm:text-xs md:text-sm text-cyan-200 font-semibold uppercase tracking-widest whitespace-nowrap">
                 Since {company.founded} · Karnataka, India
               </span>
             </div>

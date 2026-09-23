@@ -20,6 +20,8 @@ export const company = {
   // ── Contact ─────────────────────────────────────────────
   phone: "080-26624983",
   phoneDisplay: "080-2662 4983",
+  mobile: "+919845140056",
+  mobileDisplay: "+91 98451 40056",
   email: "kumargpco@gmail.com",
   // ── Location ────────────────────────────────────────────
   city: "Bengaluru",

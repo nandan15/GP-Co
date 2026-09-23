@@ -26,10 +26,19 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
   return (
     <motion.div
       variants={scaleIn}
-      className="group relative bg-white rounded-2xl p-7 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-surface-tertiary overflow-hidden flex flex-col"
+      className="group relative bg-white rounded-2xl p-7 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-surface-tertiary overflow-hidden flex flex-col cursor-pointer"
     >
+      {/* Full card clickable link */}
+      <Link
+        href={`/services#${service.slug}`}
+        className="absolute inset-0 z-10"
+        aria-label={`Learn more about ${service.title}`}
+      >
+        <span className="sr-only">Learn more about {service.title}</span>
+      </Link>
+
       {/* Background hover fill */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-900/0 to-navy-900/0 group-hover:from-navy-900/[0.02] group-hover:to-navy-900/[0.04] transition-all duration-500 rounded-2xl" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-900/0 to-navy-900/0 group-hover:from-navy-900/[0.02] group-hover:to-navy-900/[0.04] transition-all duration-500 rounded-2xl pointer-events-none" aria-hidden="true" />
 
       {/* Icon */}
       <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-navy-900/6 group-hover:bg-navy-900/10 transition-colors mb-5">
@@ -37,7 +46,7 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
       </div>
 
       {/* Content */}
-      <h3 className="font-heading font-bold text-navy-900 text-body-xl mb-3 leading-tight">
+      <h3 className="font-heading font-bold text-navy-900 text-body-xl mb-3 leading-tight group-hover:text-accent transition-colors">
         {service.title}
       </h3>
       <p className="text-navy-700/65 text-body-sm leading-relaxed flex-1 mb-6">
@@ -45,14 +54,10 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
       </p>
 
       {/* CTA */}
-      <Link
-        href={`/services#${service.slug}`}
-        className="inline-flex items-center gap-2 text-accent font-semibold text-body-sm group/link"
-        aria-label={`Learn more about ${service.title}`}
-      >
-        <span className="group-hover/link:underline underline-offset-2">Learn More</span>
-        <ArrowRight size={15} className="group-hover/link:translate-x-1 transition-transform" />
-      </Link>
+      <div className="inline-flex items-center gap-2 text-accent font-semibold text-body-sm group/link mt-auto">
+        <span className="group-hover:underline underline-offset-2">Learn More</span>
+        <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+      </div>
     </motion.div>
   );
 }

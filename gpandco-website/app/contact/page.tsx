@@ -66,22 +66,25 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="text-label-md text-navy-700/45 uppercase tracking-wider mb-1">
-                          Phone
+                          Phone & Mobile
                         </p>
-                        {company.phone !== "[PHONE NUMBER]" ? (
+                        <div className="flex flex-col gap-1">
+                          <a
+                            href={`tel:${company.mobile}`}
+                            className="font-heading font-bold text-navy-900 text-body-xl hover:text-accent transition-colors"
+                            aria-label={`Call GP & Co. mobile at ${company.mobileDisplay}`}
+                          >
+                            {company.mobileDisplay}
+                          </a>
                           <a
                             href={`tel:${company.phone}`}
-                            className="font-heading font-bold text-navy-900 text-body-xl hover:text-accent transition-colors"
-                            aria-label={`Call GP & Co. at ${company.phoneDisplay}`}
+                            className="font-heading font-semibold text-navy-700 text-body-md hover:text-accent transition-colors"
+                            aria-label={`Call GP & Co. landline at ${company.phoneDisplay}`}
                           >
-                            {company.phoneDisplay}
+                            {company.phoneDisplay} (Landline)
                           </a>
-                        ) : (
-                          <p className="font-heading font-bold text-navy-900/30 text-body-xl italic">
-                            [PHONE NUMBER]
-                          </p>
-                        )}
-                        <p className="text-navy-700/45 text-body-sm mt-1">Call GP & Co.</p>
+                        </div>
+                        <p className="text-navy-700/45 text-body-sm mt-1.5">Call GP & Co. for inquiries</p>
                       </div>
                     </div>
                   </div>
@@ -96,7 +99,7 @@ export default function ContactPage() {
                         <p className="text-label-md text-navy-700/45 uppercase tracking-wider mb-1">
                           Email
                         </p>
-                        {company.email !== "[EMAIL ADDRESS]" ? (
+                        {(company.email as string) !== "[EMAIL ADDRESS]" ? (
                           <a
                             href={`mailto:${company.email}`}
                             className="font-heading font-bold text-navy-900 text-body-lg hover:text-accent transition-colors break-all"
@@ -198,22 +201,15 @@ export default function ContactPage() {
                     Reach out to GP & Co. directly to discuss your dental practice requirements.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    {company.phone !== "[PHONE NUMBER]" ? (
-                      <a
-                        href={`tel:${company.phone}`}
-                        id="contact-call-cta"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-navy-900 rounded-xl font-semibold text-sm hover:bg-surface transition-colors"
-                      >
-                        <Phone size={16} aria-hidden="true" />
-                        Call GP & Co.
-                      </a>
-                    ) : (
-                      <div className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 text-white/40 rounded-xl font-semibold text-sm border border-white/10 cursor-not-allowed">
-                        <Phone size={16} aria-hidden="true" />
-                        [PHONE NUMBER]
-                      </div>
-                    )}
-                    {company.email !== "[EMAIL ADDRESS]" ? (
+                    <a
+                      href={`tel:${company.mobile}`}
+                      id="contact-call-cta"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-navy-900 rounded-xl font-semibold text-sm hover:bg-surface transition-colors"
+                    >
+                      <Phone size={16} aria-hidden="true" />
+                      Call GP & Co. ({company.mobileDisplay})
+                    </a>
+                    {(company.email as string) !== "[EMAIL ADDRESS]" ? (
                       <a
                         href={`mailto:${company.email}`}
                         id="contact-email-cta"

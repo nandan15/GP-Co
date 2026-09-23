@@ -8,6 +8,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { CTASection } from "@/components/sections/CTASection";
 
 import { PageHero } from "@/components/ui/PageHero";
+import { HashScrollHandler } from "@/components/ui/HashScrollHandler";
 
 export const metadata: Metadata = {
   title: "Services | Dental Clinic Setup, Equipment & Support",
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
+      <HashScrollHandler />
       {/* ── Hero ───────────────────────────────────────────── */}
       <PageHero
         badge="What We Do"
@@ -39,7 +41,7 @@ export default function ServicesPage() {
             <section
               key={service.id}
               id={service.slug}
-              className={`py-section ${isEven ? "bg-white" : "bg-surface-secondary"}`}
+              className={`py-section scroll-mt-24 ${isEven ? "bg-white" : "bg-surface-secondary"}`}
               aria-labelledby={`service-${service.id}-heading`}
             >
               <div className="container-wide">
